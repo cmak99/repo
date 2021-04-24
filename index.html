@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Phoenix Circling Hempsterville Parking Lot</title>
+    <meta name="description" content="Phoenix Rising" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.1/dist/aframe-extras.min.js"></script>
+    <script src="public/js/sphereexpand.js"></script>
+    <script src="public/js/backhome.js"></script>
+    <script src="public/js/examplefunctions.js"></script>
+    <script src="public/js/audiocontrols.js"></script>
+    <script src="public/js/videocontrols.js"></script>
+    <script src="public/js/videosphereexpand.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item
+          id="bird"
+          response-type="arraybuffer"
+          src="https://cdn.glitch.com/1061d524-9d0f-4b25-97fd-48ebd0fce63c%2Fsceneglb.glb?1546534633849"
+          crossorigin="anonymous"
+        ></a-asset-item>
+        <audio
+          id="song"
+          src="https://cdn.glitch.com/96ab1f6e-16b9-43c1-9df3-fbe9b24a7490%2FLeft%20and%20Leaving.mp3?1549919550870"
+          preload="auto"
+          crossorigin="anonymous"
+        ></audio>
+        <video
+          id="videoclip"
+          loop="true"
+          src="https://cdn.glitch.com/96ab1f6e-16b9-43c1-9df3-fbe9b24a7490%2FTimelapse%20Video.mp4?1549921266764"
+          crossorigin="anonymous"
+        ></video>
+        <video
+          id="spherevidclip"
+          autoplay
+          loop="true"
+          src="https://cdn.glitch.com/96ab1f6e-16b9-43c1-9df3-fbe9b24a7490%2F360%20Timelapse.mp4?1549922819582"
+          crossorigin="anonymous"
+        ></video>
+        <img
+          id="bordeauxtheater"
+          src="https://cdn.glitch.com/913639bf-0f9d-4623-94ee-35cb7bec54f5%2FRight1Edited.jpg?v=1618453813069"
+          crossorigin="anonymous"
+        />
+      </a-assets>
+
+      <a-entity
+        gltf-model="https://cdn.glitch.com/1061d524-9d0f-4b25-97fd-48ebd0fce63c%2Fsceneglb.glb?1546534633849"
+        eglb.
+        position="-1.31103 9.2 -16.49544"
+        scale="0.01 0.01 0.01"
+        animation-mixer="clip:Take 001;loop:2;crossFadeDuration:1"
+        rotation="1.38 0 0"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="https://cdn.glitch.com/913639bf-0f9d-4623-94ee-35cb7bec54f5%2FHvillleGLBTwo.glb?v=1619044106745"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 18000; easing: linear"
+        scale="7 7 7"
+        cursor="rayOrigin:mouse"
+        raycaster="useWorldCoordinates:true;origin:0 1.6 0;direction:-1 -0.5 -0.03"
+        position="-1.0 2.95 -5"
+      >
+      </a-entity>
+      <a-entity cursor="rayOrigin: mouse"></a-entity>
+      <a-entity laser-controls="hand:right"></a-entity>
+
+      <a-scene>
+        <a-sky
+          src="https://cdn.glitch.com/913639bf-0f9d-4623-94ee-35cb7bec54f5%2FHempsterFront.jpg?v=1616790774923"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 18000; easing: linear"
+        >
+        </a-sky>
+      </a-scene>
+      <a-entity
+        id="photospheredisplay"
+        class="homeworld"
+        position="-3.06864 -12.96414 -18.75571"
+        scale="0.425 0.425 0.425"
+      >
+        <a-sphere
+          position="0 1.8 0"
+          radius="3.7"
+          src="#bordeauxtheater"
+          sphereexpand=""
+          animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+          material=""
+          geometry=""
+        ></a-sphere>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
